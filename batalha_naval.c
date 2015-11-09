@@ -19,8 +19,11 @@ int main()
 	char controle[6][6];
 	int continuar = 1;
 	int score = 0;
+	char nome[100];
 	
-
+    printf("Olá! Digite seu nome:");
+    scanf("%s", nome);
+    
         for(i=1; i<6; i++){
              for(j=1; j<6; j++){
                       controle[i][j] = '.';
@@ -41,7 +44,7 @@ int main()
         controle[i][j] = 'X';
         score ++;
         printf("Bomba!!\n");
-        printf("Seu score atual é de %d pontos\n", score);
+        printf("Seu score atual é de %d ponto(s)\n", score);
     	printf("Deseja Continuar? 1 = Sim / 0= Não:");
     	scanf("%d", &continuar);
         
@@ -50,7 +53,7 @@ int main()
     {
         controle[i][j] = 'O';
         printf("Agua!!, que pena\n");
-        printf("Seu score atual é de %d pontos\n", score);
+        printf("Seu score atual é de %d ponto(s)\n", score);
     	printf("Deseja Continuar? 1 = Sim / 0= Não:");
     	scanf("%d", &continuar);
     }
@@ -75,7 +78,7 @@ int main()
                 controle[i][j] = 'X';
                 score ++;
                 printf("Bomba!!\n");
-                printf("Seu score atual é de %d pontos\n", score);
+                printf("Seu score atual é de %d ponto(s)\n", score);
             	printf("Deseja Continuar? 1 = Sim / 0= Não:");
             	scanf("%d", &continuar);
                 
@@ -84,7 +87,7 @@ int main()
             {
                 controle[i][j] = 'O';
                 printf("Agua!!, que pena\n");
-                printf("Seu score atual é de %d pontos\n", score);
+                printf("Seu score atual é de %d ponto(s)\n", score);
             	printf("Deseja Continuar? 1 = Sim / 0= Não:");
             	scanf("%d", &continuar);
             }
@@ -101,6 +104,7 @@ int main()
             
             
    }
-   printf("Essas foram suas jogadas!\n\nObrigado por Jogar\n\n");
+   printf("Essas foram suas jogadas!\n\n");
+   printf("%s, você fez %d ponto(s)!!!\n\nObrigado por Jogar\n\n",nome, score);
 	return 0;
 }
